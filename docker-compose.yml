@@ -5,6 +5,11 @@ services:
     container_name: jupyterlab
     ports:
       - "8888:8888"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "8888"]
+      interval: 3s
+      timeout: 10s
+      retries: 3
     volumes:
       - jupyterlab:/home/zain/jupyterlab
 
