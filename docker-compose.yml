@@ -1,0 +1,12 @@
+services:
+  jupyterlab:
+    image: jupyterlab:latest
+    build: .
+    container_name: jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - jupyterlab:/home/zain/jupyterlab
+
+volumes:
+  jupyterlab:
